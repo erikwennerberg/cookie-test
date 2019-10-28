@@ -2,3 +2,6 @@
 AppServerAgent-4.5.15.28231/ver4.5.15.28231/logs
 *.asc
 *.log
+*.ser
+AppServerAgent-4.5.15.28231/ver4.5.15.28231/conf/producernode*
+AppServerAgent-4.5.15.28231/ver4.5.15.28231/conf/consumernode*

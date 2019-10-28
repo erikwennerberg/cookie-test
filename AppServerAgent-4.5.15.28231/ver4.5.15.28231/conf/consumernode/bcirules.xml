@@ -1,0 +1,5 @@
+<multiple-inheritance-rules>
+    <instrumentation-properties>
+        <property name="bci-fixer-other-classes" value="java.util.concurrent.ForkJoinTask,jdk.internal.misc.InnocuousThread,org.apache.kafka.common.utils.LogContext$LocationAwareKafkaLogger,jdk.management.jfr.SettingDescriptorInfo$1,java.util.concurrent.ThreadPoolExecutor$Worker,org.springframework.integration.handler.AbstractMessageHandler,jdk.internal.ref.CleanerImpl,java.util.concurrent.Executors$RunnableAdapter,org.springframework.integration.channel.AbstractMessageChannel"/>
+    </instrumentation-properties>
+</multiple-inheritance-rules>

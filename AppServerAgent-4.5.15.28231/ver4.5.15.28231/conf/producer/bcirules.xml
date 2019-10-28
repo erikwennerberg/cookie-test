@@ -1,0 +1,6 @@
+<multiple-inheritance-rules>
+    <instrumentation-properties>
+        <property name="dynamic-servlet-classes" value="org.springframework.web.servlet.FrameworkServlet"/>
+        <property name="bci-fixer-other-classes" value="org.apache.kafka.common.utils.LogContext$LocationAwareKafkaLogger,reactor.core.publisher.FluxEmpty,reactor.core.publisher.FluxJust,reactor.core.publisher.FluxError,reactor.core.publisher.FluxErrorSupplied,reactor.core.publisher.FluxCallable,reactor.core.publisher.MonoSupplier,reactor.core.publisher.MonoRunnable,reactor.core.publisher.MonoJust,reactor.core.publisher.MonoErrorSupplied,reactor.core.publisher.MonoError,reactor.core.publisher.MonoCallable,reactor.core.publisher.MonoProcessor,reactor.core.publisher.MonoCacheTime,org.springframework.integration.handler.AbstractMessageHandler,jdk.management.jfr.SettingDescriptorInfo$1,java.util.concurrent.ForkJoinTask,java.util.concurrent.ThreadPoolExecutor$Worker,java.util.concurrent.Executors$RunnableAdapter,jdk.internal.misc.InnocuousThread,jdk.internal.ref.CleanerImpl,reactor.core.publisher.MonoProcessor$NextInner,reactor.core.publisher.Operators$MonoSubscriber"/>
+    </instrumentation-properties>
+</multiple-inheritance-rules>

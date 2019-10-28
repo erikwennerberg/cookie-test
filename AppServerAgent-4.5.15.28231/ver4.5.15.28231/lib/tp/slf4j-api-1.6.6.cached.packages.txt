@@ -1,0 +1,4 @@
+1571716374000
+org.slf4j
+org.slf4j.spi
+org.slf4j.helpers
