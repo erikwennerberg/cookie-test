@@ -30,15 +30,19 @@ If Kafka is not running and fails to start after your computer wakes up from hib
 
 # 2. Configure AppD and run the apps
 1. Replace AppD controller access key with the one of your controller in AppServerAgent-4.5.15.28231/conf/controller-info.xml
-2. Go to each app's target folder
+2. Go to each app's main folder (where the snapshot jar is located)
 3. Run Consumer spring app:
-> java -javaagent:../../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=consumer -Dappdynamics.agent.nodeName=consumernode -jar cookie-consumer-0.0.1-SNAPSHOT.jar
+> java -javaagent:../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=consumer -Dappdynamics.agent.nodeName=consumernode -jar cookie-consumer-0.0.1-SNAPSHOT.jar
 4. Run Producer spring app:
-> java -javaagent:../../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=producer -Dappdynamics.agent.nodeName=producernode -jar cookie-producer-0.0.1-SNAPSHOT.jar
+> java -javaagent:../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=producer -Dappdynamics.agent.nodeName=producernode -jar cookie-producer-0.0.1-SNAPSHOT.jar
 
 # 3. Test the app
 Hit 
 > http://localhost:8080/greetings?message=hello 
 in a browser to launch a greeting message in the producer
+
+![Image of result](https://github.com/erikwennerberg/cookie-test/raw/master/result.png)
+
+
 
 
