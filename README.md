@@ -1,4 +1,4 @@
-# cookie-test
+# spring cloud stream appd correlation kafka test
 One spring boot cloud stream producer app
 One spring boot cloud stream consumer app
 Kafka
