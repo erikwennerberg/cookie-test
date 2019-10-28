@@ -1,4 +1,4 @@
-# spring cloud stream appd correlation kafka test
+# Spring cloud stream appd correlation kafka test
 One spring boot cloud stream producer app
 One spring boot cloud stream consumer app
 Kafka
