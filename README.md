@@ -1,19 +1,38 @@
 # cookie-test
-One spring boot producer app
-One spring boot consumer app
+One spring boot cloud stream producer app
+One spring boot cloud stream consumer app
+Kafka
+AppDynamics
 
-Followed this example - https://dzone.com/articles/spring-cloud-stream-with-kafka
+# Pre-requisites:
+- maven 
+- JDK 8
+- AppD controller
 
-Used Kafka 2.11-2.2.0
+Followed and modified this example - https://dzone.com/articles/spring-cloud-stream-with-kafka
 
-In server.properties uncommented this line:
+
+
+# Step1 - setup Kafka
+Download Kafka from here and untar it:
+> tar -xzf kafka_2.11-1.0.0.tgz
+> cd kafka_2.11-1.0.0
+In config/server.properties I uncommented this line:
 listeners=PLAINTEXT://127.0.0.1:9092
+Start Zookeeper and Kafka
+> bin/zookeeper-server-start.sh config/zookeeper.properties
+> bin/kafka-server-start.sh config/server.properties
+If Kafka is not running and fails to start after your computer wakes up from hibernation, delete the <TMP_DIR>/kafka-logs folder and then start Kafka again.
 
-to run the apps:
-mvn spring-boot:run
+# Step2 - configure AppD and run the two spring boot applications
+1. Replace AppD controller access key with the one of your controller in AppServerAgent-4.5.15.28231/conf/controller-info.xml
+2. Go to each app's target folder
+3. Run Consumer spring app:
+> java -javaagent:../../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=consumer -Dappdynamics.agent.nodeName=consumernode -jar cookie-consumer-0.0.1-SNAPSHOT.jar
+4. Run Producer spring app:
+> java -javaagent:../../AppServerAgent-4.5.15.28231/javaagent.jar -Dappdynamics.agent.tierName=producer -Dappdynamics.agent.nodeName=producernode -jar cookie-producer-0.0.1-SNAPSHOT.jar
 
-then:
+# Step3: - test the app
+Hit http://localhost:8080/greetings?message=hello in a browser -> launch a greeting message in the producer
 
-http://localhost:8080/greetings?message=hello -> launch a greeting message in the producer
 
-Both apps use spring cloud stream 2.2.0.RELEASE
